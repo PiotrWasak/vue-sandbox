@@ -11,7 +11,8 @@
     <v-row>
       <v-col>
         <v-card
-            elevation="2"
+            
+            elevation="6"
         >
           <v-card-title>
             <v-avatar>
@@ -39,6 +40,18 @@
     <v-row>
       <v-col v-if="isAlert">
         <v-alert shaped type="success">You clicked "Mixin Alert"</v-alert>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <v-alert
+            v-color-currenda
+            border="right"
+            dismissible
+            elevation="21"
+            icon="mdi-chair-rolling"
+        >Currenda Color alert
+        </v-alert>
       </v-col>
     </v-row>
   </v-container>
