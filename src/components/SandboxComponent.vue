@@ -10,18 +10,22 @@
     </v-row>
     <v-row>
       <v-col>
-        <v-card
-            
-            elevation="6"
-        >
+        <v-card elevation="6">
           <v-card-title>
             <v-avatar>
-              <img src="https://picsum.photos/200">
+              <img src="https://picsum.photos/200" />
             </v-avatar>
             &nbsp;ID
           </v-card-title>
-          <v-card-text><p><span class="text-h6">First name: </span> {{ firstName | capitalize }}</p>
-            <p><span class="text-h6">Last name : </span> {{ lastName | capitalize }}</p>
+          <v-card-text
+            ><p>
+              <span class="text-h6">First name: </span>
+              {{ firstName | capitalize }}
+            </p>
+            <p>
+              <span class="text-h6">Last name : </span>
+              {{ lastName | capitalize }}
+            </p>
           </v-card-text>
         </v-card>
       </v-col>
@@ -45,12 +49,12 @@
     <v-row>
       <v-col>
         <v-alert
-            v-color-currenda
-            border="right"
-            dismissible
-            elevation="21"
-            icon="mdi-chair-rolling"
-        >Currenda Color alert
+          v-color-currenda
+          border="right"
+          dismissible
+          elevation="21"
+          icon="mdi-chair-rolling"
+          >Currenda Color alert
         </v-alert>
       </v-col>
     </v-row>
@@ -58,30 +62,29 @@
 </template>
 
 <script>
-import {sandboxMixin} from "@/mixins/mixin.";
-import {toggleServicesAlert} from "@/services/sandboxService";
+import { sandboxMixin } from "@/mixins/mixin.";
+import { toggleServicesAlert } from "@/services/sandboxService";
 
 export default {
   name: "SandboxComponent",
   data() {
     return {
-      firstName: '',
-      lastName: '',
+      firstName: "",
+      lastName: "",
       isServiceAlertOpen: false,
-    }
+    };
   },
   filters: {
     capitalize(text) {
-      return text.charAt(0).toUpperCase() + text.slice(1)
-    }
+      return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+    },
   },
   mixins: [sandboxMixin],
   methods: {
     toggleServicesAlert,
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
-
 </style>
